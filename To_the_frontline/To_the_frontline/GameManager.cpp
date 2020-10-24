@@ -10,8 +10,8 @@
 
 GameManager::GameManager()
 {
-	//PoketmonList = new vector<Poketmon*>;
-	//LoadPoketmonList(PoketmonList, "./data/PoketmonList.txt");
+	ArmyList = new vector<MyArmy*>;
+	LoadArmyList(ArmyList, "./data/Start_Army.txt");
 
 	//StageList = new vector<Stage*>;
 	//LoadStageList(StageList, "./data/StageList.txt");
@@ -52,15 +52,15 @@ GameManager::GameManager()
 
 GameManager::~GameManager()
 {
-	for (int i = 0; i < (int)PoketmonList->size(); i++)
+	for (int i = 0; i < (int)ArmyList->size(); i++)
 	{
-		if ((*PoketmonList)[i] != NULL)
+		if ((*ArmyList)[i] != NULL)
 		{
-			delete (*PoketmonList)[i];
-			(*PoketmonList)[i] = NULL;
+			delete (*ArmyList)[i];
+			(*ArmyList)[i] = NULL;
 		}
 	}
-	PoketmonList->clear();
+	ArmyList->clear();
 
 	if (MyPlayer != NULL)
 	{
@@ -69,30 +69,30 @@ GameManager::~GameManager()
 	}
 }
 
-vector<Poketmon*>* GameManager::GetPoketmonList()
+vector<MyArmy*>* GameManager::GetArmyList()
 {
-	return PoketmonList;
+	return ArmyList;
 }
 
-void GameManager::SetPoketmonList(vector<Poketmon*>* list)
+void GameManager::SetArmyList(vector<MyArmy*>* list)
 {
-	PoketmonList = list;
+	ArmyList = list;
 }
 
-vector<Stage*>* GameManager::GetStageList()
-{
-	return StageList;
-}
+//vector<Stage*>* GameManager::GetStageList()
+//{
+//	return StageList;
+//}
 
-Stage* GameManager::GetCurrStage()
-{
-	return CurrStage;
-}
+//Stage* GameManager::GetCurrStage()
+//{
+//	return CurrStage;
+//}
 
-void GameManager::SetCurrStage()
-{
-	//CurrStage = (*GetStageList())[MyPlayer->stage_num];
-}
+//void GameManager::SetCurrStage()
+//{
+//	//CurrStage = (*GetStageList())[MyPlayer->stage_num];
+//}
 
 Player* GameManager::GetPlayerInfo()
 {

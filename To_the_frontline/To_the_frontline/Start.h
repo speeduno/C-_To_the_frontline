@@ -4,6 +4,9 @@
 
 class Start : public Scene
 {
+	string name; //자신의 이름
+	vector<MyArmy*> MyArmyList;
+
 public:
 
 public:

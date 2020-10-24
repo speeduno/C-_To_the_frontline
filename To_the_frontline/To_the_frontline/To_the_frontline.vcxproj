@@ -145,6 +145,12 @@
     <ClCompile Include="Info.cpp" />
     <ClCompile Include="Lobby.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyArmy.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">아니오</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">아니오</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Recon.cpp" />
     <ClCompile Include="Recruit.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -158,6 +164,12 @@
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Info.h" />
     <ClInclude Include="Lobby.h" />
+    <ClInclude Include="MyArmy.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">아니오</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">아니오</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="Recon.h" />
     <ClInclude Include="Recruit.h" />
     <ClInclude Include="Scene.h" />

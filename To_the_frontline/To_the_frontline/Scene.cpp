@@ -1,4 +1,6 @@
 #include "Scene.h"
+#include "MyArmy.h"
+#include "Player.h"
 
 Scene::Scene()
 {
@@ -46,10 +48,10 @@ void Scene::DrawArmyList()
 	SetTextColor(14);
 	printf("[¾Æ±º]");
 
-	//for (int i = 0; i < (int)GameManager::getInstance()->GetPoketmonList()->size(); i++)
-	//{
-		//(*GameManager::getInstance()->GetPoketmonList())[i]->PrintInfo(2 + i * 30, 35);
-	//}
+	for (int i = 0; i < (int)GameManager::getInstance()->GetArmyList()->size(); i++)
+	{
+		(*GameManager::getInstance()->GetArmyList())[i]->PrintInfo(2+i *30, 35);
+	}
 }
 
 void Scene::PrintButtonList(list<Button*> ButtonList, list<Button*>::iterator CurrentButton)

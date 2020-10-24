@@ -10,11 +10,10 @@ public:
 	int			pos_y;			// 버튼이 그려질 y 좌표
 
 public:
-	Button() {};
+	//Button() {};
 	Button(string t, int n, int x, int y);
 	~Button();
 };
-
 
 class Scene
 {

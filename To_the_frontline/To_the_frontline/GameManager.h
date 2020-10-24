@@ -1,5 +1,7 @@
 #pragma once
 #include "Info.h"
+#include "player.h"
+#include "MyArmy.h"
 
 enum SCENE_TYPE
 {
@@ -14,6 +16,8 @@ enum SCENE_TYPE
 };
 
 class Scene;
+class Plyaer;
+class MyArmy;
 
 class GameManager
 {
@@ -23,10 +27,10 @@ private:
 	vector<Scene*>		SceneList;		// 전체 씬 리스트
 	Scene* CurrScene;					// 현재 활성화된 씬. 이 변수의 내용을 초기화하면서 씬의 이동 구현
 
-	vector<Stage*>* StageList;			// 전체 스테이지 리스트
-	Stage* CurrStage;					// 현재 위치한 스테이지
+	//vector<Stage*>* StageList;		// 전체 스테이지 리스트
+	//Stage* CurrStage;					// 현재 위치한 스테이지
 
-	vector<Poketmon*>* PoketmonList;	// 소유 포켓몬 리스트
+	vector<MyArmy*>* ArmyList;			// 소유 군사 리스트
 	Player* MyPlayer;					// 플레이어 정보
 	GameManager();
 	~GameManager();
@@ -40,12 +44,12 @@ public:
 		return instance;
 	}
 
-	vector<Poketmon*>* GetPoketmonList();
-	void SetPoketmonList(vector<Poketmon*>* list);
+	vector<MyArmy*>* GetArmyList();
+	void SetArmyList(vector<MyArmy*>* list);
 
-	vector<Stage*>* GetStageList();
-	Stage* GetCurrStage();
-	void SetCurrStage();
+	//vector<Stage*>* GetStageList();
+	//Stage* GetCurrStage();
+	//void SetCurrStage();
 
 	Player* GetPlayerInfo();
 	void SetPlayerInfo(Player* player);

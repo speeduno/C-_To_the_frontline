@@ -1,6 +1,5 @@
 #include "Info.h"
-
-#pragma warning (disable:4996)
+#include "MyArmy.h"
 
 void GoToXY(SHORT x, SHORT y)
 {
@@ -21,37 +20,36 @@ void SetTextColor(int num)
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), num);
 }
 
-//void LoadPoketmonList(vector<Poketmon*>* PoketmonList, string FileName)
-//{
-//	FILE* pRead = fopen(FileName.c_str(), "rt");
-//
-//	if (pRead != NULL)
-//	{
-//		int count = 0;
-//		fscanf(pRead, "%d", &count);
-//
-//		for (int i = 0; i < count; i++)
-//		{
-//			Poketmon* p = new Poketmon();
-//
-//			fscanf(pRead, "%d %s %d %d %d %d %d %d %d %d %d",
-//				&(p->name_length), p->name.c_str(), &(p->level), &(p->hp), &(p->max_hp), &(p->damage), &(p->origin_price), &(p->exp),
-//				&(p->damage_up), &(p->hp_up), &(p->drop_rate));
-//
-//			PoketmonList->push_back(p);
-//		}
-//	}
-//
-//	else
-//	{
-//		FILE* pWrite = fopen(FileName.c_str(), "wt");
-//		fprintf(pWrite, "%d\n", 0);
-//		fclose(pWrite);
-//	}
-//
-//	fclose(pRead);
-//}
-//
+void LoadArmyList(vector<MyArmy*>* ArmyList, string FileName)
+{
+	FILE* pRead = fopen(FileName.c_str(), "rt");
+
+	if (pRead != NULL)
+	{
+		int count = 0;
+		fscanf(pRead, "%d", &count);
+
+		for (int i = 0; i < count; i++)
+		{
+			MyArmy* p = new MyArmy();
+
+			fscanf(pRead, "%d %s %d %d %d %d %d",
+				&(p->name_length), p->name.c_str(), &(p->level), &(p->hp), &(p->max_hp), &(p->damage), &(p->type));
+
+			ArmyList->push_back(p);
+		}
+	}
+
+	else
+	{
+		FILE* pWrite = fopen(FileName.c_str(), "wt");
+		fprintf(pWrite, "%d\n", 0);
+		fclose(pWrite);
+	}
+
+	fclose(pRead);
+}
+
 //void SavePoketmonList(vector<Poketmon*>* PoketmonList, string FileName)
 //{
 //	FILE* pWrite = fopen(FileName.c_str(), "wt");

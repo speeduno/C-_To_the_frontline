@@ -12,6 +12,8 @@ void Start::Init()
     OnOff = true;
     SetCursorVisible(false);
 
+    LoadArmyList(&MyArmyList, "./data/Start_Army.txt");
+
     Draw();
 }
 
@@ -26,6 +28,19 @@ void Start::Update()
         switch (key)
         {
         case ENTER:
+            vector<MyArmy*>* list = new vector<MyArmy*>;
+            
+            for(int i = 0; i< MyArmyList.size(); i++)
+            {
+                list->push_back(MyArmyList[i]);
+            }
+           
+            GameManager::getInstance()->SetArmyList(list);
+
+            //Player* player = new Player();
+            //player->name = name;      //플레이어 정보 입력하기
+            //GameManager::getInstance()->SetPlayerInfo(player);
+            //GameManager::getInstance()->SetCurrStage();
             GameManager::getInstance()->changeScene(LOBBY);           
             break;       
         }
@@ -55,7 +70,14 @@ void Start::Draw()
     GoToXY(35, 13);
     printf("계속하려면 ENTER키를 누르십시오.\n");
 
-    //PrintButtonList(ButtonList, CurrentButton);
+    SetTextColor(15);
+    GoToXY(55, 20);
+    printf("당신의 군사입니다.");
+
+    for (int i = 0; i < (int)MyArmyList.size(); i++)
+    {
+        MyArmyList[i]->PrintInfo(20 + i * 30, 24);
+    }
 }
 
 void Start::Destroy()
