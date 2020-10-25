@@ -27,7 +27,9 @@ void Scene::DrawSceneName()
 
 void Scene::DrawPlayerInfo()
 {
-	//GameManager::getInstance()->GetPlayerInfo()->PrintPlayerInfo();
+	GoToXY(SCName_X, SCName_Y + 2);
+	SetTextColor(15);
+	GameManager::getInstance()->GetPlayerInfo()->PrintPlayerInfo(2, 2);
 }
 
 void Scene::DrawStageInfo()

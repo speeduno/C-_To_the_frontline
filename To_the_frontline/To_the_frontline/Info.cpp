@@ -73,27 +73,27 @@ void LoadArmyList(vector<MyArmy*>* ArmyList, string FileName)
 //
 //	fclose(pWrite);
 //}
-//
-//void LoadPlayerInfo(Player* player, string FileName)
-//{
-//	FILE* pRead = fopen(FileName.c_str(), "rt");
-//
-//	if (pRead != NULL)
-//	{
-//		fscanf(pRead, "%d %d %d %d %d %s %s",
-//			&(player->level), &(player->gold), &(player->exp), &(player->next_exp), &(player->stage_num), player->title.c_str(), player->name.c_str());
-//	}
-//
-//	else
-//	{
-//		FILE* pWrite = fopen(FileName.c_str(), "wt");
-//		fprintf(pWrite, "%d\n", -1);
-//		fclose(pWrite);
-//	}
-//
-//	fclose(pRead);
-//}
-//
+
+void LoadPlayerInfo(Player* player, string FileName)
+{
+	FILE* pRead = fopen(FileName.c_str(), "rt");
+
+	if (pRead != NULL)
+	{
+		fscanf(pRead, "%d %d %d %d %d %s %s",
+			&(player->level), &(player->gold), &(player->exp), &(player->next_exp), &(player->stage_num), player->title.c_str(), player->name.c_str());
+	}
+
+	else
+	{
+		FILE* pWrite = fopen(FileName.c_str(), "wt");
+		fprintf(pWrite, "%d\n", -1);
+		fclose(pWrite);
+	}
+
+	fclose(pRead);
+}
+
 //void SavePlayerInfo(Player* player, string FileName)
 //{
 //	FILE* pWrite = fopen(FileName.c_str(), "wt");

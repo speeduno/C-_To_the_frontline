@@ -39,9 +39,9 @@ void MyArmy::PrintInfo(SHORT x, SHORT y)
 	GoToXY(x, y + 5);	printf("# ·¹º§   %d                 #", level);
 	GoToXY(x, y + 6);	printf("# HP     ");
 
-	for (int i = 0; i < 18 - (hp / 5); i++)
+	for (int i = 0; i <18-(hp / 100); i++)
 	{
-		if ((hp / 5) > i)
+		if ((hp / 100) > i)
 			printf("¡á");
 		else
 			printf(" ");
@@ -50,9 +50,9 @@ void MyArmy::PrintInfo(SHORT x, SHORT y)
 
 
 	GoToXY(x, y + 7);	printf("# DAMAGE ");
-	for (int i = 0; i < 18 - damage; i++)
+	for (int i = 0; i < 18-(damage)/100; i++)
 	{
-		if (damage > i)
+		if ((damage/100) > i)
 			printf("¡á");
 		else
 			printf(" ");

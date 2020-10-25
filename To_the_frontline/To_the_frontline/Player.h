@@ -4,16 +4,14 @@
 class Player
 {
 public:
-	//string name;
-	//int Hp;
-	//int Def;
-	//int Atk;
+	string pname;
+	int catle;
+	int power;
 
 public:
 	Player();
 	~Player();
 
 public:
-	void PrintPlayerInfo();
-
+	void PrintPlayerInfo(SHORT x, SHORT y);
 };

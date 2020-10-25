@@ -7,19 +7,19 @@ Lobby::~Lobby()
 
 void Lobby::Init()
 {
-    Button* sel_1 = new Button("전투로", 0, 30, 10);
+    Button* sel_1 = new Button("전투로", 0, 40, 12);
     ButtonList.push_back(sel_1);
-    Button* sel_2 = new Button("병영", 1, 30, 12);
+    Button* sel_2 = new Button("병영", 1, 40, 14);
     ButtonList.push_back(sel_2);
-    Button* sel_3 = new Button("정찰", 2, 30, 14);
+    Button* sel_3 = new Button("정찰", 2, 40, 16);
     ButtonList.push_back(sel_3);
-    Button* sel_4 = new Button("소집", 3, 30, 16);
+    Button* sel_4 = new Button("소집", 3, 40, 18);
     ButtonList.push_back(sel_4);
-    Button* sel_5 = new Button("업그레이드", 4, 30, 18);
+    Button* sel_5 = new Button("업그레이드", 4, 40, 20);
     ButtonList.push_back(sel_5);
-    Button* sel_6 = new Button("저장", 5, 30, 20);
+    Button* sel_6 = new Button("저장", 5, 40, 22);
     ButtonList.push_back(sel_6);
-    Button* sel_7 = new Button("종료", 6, 30, 22);
+    Button* sel_7 = new Button("종료", 6, 40, 24);
     ButtonList.push_back(sel_7);
    
     OnOff = true;
@@ -107,7 +107,7 @@ void Lobby::Draw()
 
     DrawSceneName();
     //DrawStageInfo();			//정보값들은 오브젝트를 생성해주고 설정
-    //DrawPlayerInfo();
+    DrawPlayerInfo();
     DrawArmyList();
 
     PrintButtonList(ButtonList, CurrentButton);

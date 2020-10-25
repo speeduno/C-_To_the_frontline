@@ -8,6 +8,7 @@
 #include <list>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <time.h>
 
 using namespace std;
@@ -51,13 +52,13 @@ class Button;
 
 // 스타트 병사 리스트, 적 군등을 텍스트 파일로부터 불러옴
 extern void LoadArmyList(vector<MyArmy*>* ArmyList, string FileName);
-//
+
 //// 포켓몬 리스트를 텍스트 파일로 저장
 //extern void SavePoketmonList(vector<Poketmon*>* PoketmonList, string FileName);
-//
-//// 플레이어 정보를 텍스트 파일로부터 불러옴
-//extern void LoadPlayerInfo(Player* player, string FileName);
-//
+
+// 플레이어 정보를 텍스트 파일로부터 불러옴
+extern void LoadPlayerInfo(Player* player, string FileName);
+
 //// 플레이어 정보를 텍스트 파일로 저장
 //extern void SavePlayerInfo(Player* player, string FileName);
 //
