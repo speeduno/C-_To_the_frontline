@@ -1,4 +1,5 @@
 #include "Start.h"
+#include "Player.h"
 
 Start::~Start()
 {
@@ -37,9 +38,9 @@ void Start::Update()
            
             GameManager::getInstance()->SetArmyList(list);
 
-            //Player* player = new Player();
-            //player->name = name;      //플레이어 정보 입력하기
-            //GameManager::getInstance()->SetPlayerInfo(player);
+            Player* player = new Player();
+            player->pname = name;      //플레이어 정보 입력하기
+            GameManager::getInstance()->SetPlayerInfo(player);
             //GameManager::getInstance()->SetCurrStage();
             GameManager::getInstance()->changeScene(LOBBY);           
             break;       
@@ -68,9 +69,18 @@ void Start::Draw()
     printf("한번의 전투가 끝나면 자동 저장되며, 메뉴에서도 저장할 수 있습니다.\n");
 
     GoToXY(35, 13);
-    printf("계속하려면 ENTER키를 누르십시오.\n");
+    printf("계속하려면 이름을 입력하시고, ENTER키를 누르십시오.\n");
 
     SetTextColor(15);
+
+    SetCursorVisible(true);
+    string temp;
+    GoToXY(35, 15);
+    printf("당신의 이름은? : ");
+    cin >> temp;
+    name = temp;
+    SetCursorVisible(false);
+
     GoToXY(55, 20);
     printf("당신의 군사입니다.");
 
@@ -78,6 +88,7 @@ void Start::Draw()
     {
         MyArmyList[i]->PrintInfo(20 + i * 30, 24);
     }
+
 }
 
 void Start::Destroy()

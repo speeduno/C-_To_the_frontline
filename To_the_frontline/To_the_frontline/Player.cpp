@@ -2,9 +2,8 @@
 
 Player::Player()
 {
-	pname = "이름";
-	catle = 0;
-	power = 0;
+	catle  = 0;
+	power = 1000;
 }
 
 Player::~Player()
@@ -20,24 +19,28 @@ void Player::PrintPlayerInfo(SHORT x, SHORT y)
 	GoToXY(x, y + 2);
 	printf("#");
 
-	for (int i = 0; i < 13; i++)
-		printf(" ");
+	
+	printf(" ");
 
 	SetTextColor(12);
-	printf("이름 : %s", pname.c_str());
-
+	printf("이름 : %s          ", pname.c_str());
+	
 	SetTextColor(15);
-	for (int i = 0; i < (13); i++)
+	for (int i = 0; i < 8-pname.size(); i++)
 		printf(" ");
+
 	printf("#");
 
 	GoToXY(x, y + 3);	printf("#                          #");
 	GoToXY(x, y + 4);	printf("#                          #");
 
-	GoToXY(x, y + 5);	printf("# 정복 성 갯수   %d                 #", catle);
+	GoToXY(x, y + 5);	printf("# 성 정복 : Lv. ");
+	for (int i = 0; i < 11; i++)
+		printf(" ");
+	
+	printf("#");
 	
 
-
-	GoToXY(x, y + 5);	printf("#                          #");
-	GoToXY(x, y + 6);	printf("############################");
+	GoToXY(x, y + 6);	printf("#                          #");
+	GoToXY(x, y + 7);	printf("############################");
 }

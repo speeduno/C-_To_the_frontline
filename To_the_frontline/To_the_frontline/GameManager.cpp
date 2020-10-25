@@ -17,7 +17,7 @@ GameManager::GameManager()
 	//LoadStageList(StageList, "./data/StageList.txt");
 
 	MyPlayer = new Player();
-	LoadPlayerInfo(MyPlayer, "./data/PlayerInfo.txt");
+	//LoadPlayerInfo(MyPlayer, "./data/PlayerInfo.txt");
 
 	//CurrStage = (*StageList)[MyPlayer->stage_num];
 

@@ -5,6 +5,7 @@
 class Start : public Scene
 {
 	string name; //자신의 이름
+	bool chk;	 //입력값 대기
 	vector<MyArmy*> MyArmyList;
 
 public:

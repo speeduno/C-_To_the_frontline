@@ -76,7 +76,7 @@ void LoadArmyList(vector<MyArmy*>* ArmyList, string FileName)
 
 void LoadPlayerInfo(Player* player, string FileName)
 {
-	FILE* pRead = fopen(FileName.c_str(), "rt");
+	/*FILE* pRead = fopen(FileName.c_str(), "rt");
 
 	if (pRead != NULL)
 	{
@@ -91,7 +91,7 @@ void LoadPlayerInfo(Player* player, string FileName)
 		fclose(pWrite);
 	}
 
-	fclose(pRead);
+	fclose(pRead);*/
 }
 
 //void SavePlayerInfo(Player* player, string FileName)
