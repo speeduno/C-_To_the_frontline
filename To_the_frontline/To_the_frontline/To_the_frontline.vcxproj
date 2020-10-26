@@ -154,6 +154,7 @@
     <ClCompile Include="Recon.cpp" />
     <ClCompile Include="Recruit.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SpecialArmy.cpp" />
     <ClCompile Include="Start.cpp" />
     <ClCompile Include="Title.cpp" />
     <ClCompile Include="Upgrade.cpp" />
@@ -173,6 +174,7 @@
     <ClInclude Include="Recon.h" />
     <ClInclude Include="Recruit.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SpecialArmy.h" />
     <ClInclude Include="Start.h" />
     <ClInclude Include="Title.h" />
     <ClInclude Include="Upgrade.h" />

@@ -1,6 +1,7 @@
 #include "Scene.h"
 #include "MyArmy.h"
 #include "Player.h"
+#include "SpecialArmy.h"
 
 Scene::Scene()
 {
@@ -52,9 +53,13 @@ void Scene::DrawArmyList()
 
 	for (int i = 0; i < (int)GameManager::getInstance()->GetArmyList()->size(); i++)
 	{
-		(*GameManager::getInstance()->GetArmyList())[i]->PrintInfo(2+i *30, 35);
-	}
+		(*GameManager::getInstance()->GetArmyList())[i]->PrintInfo(2 + i * 30, 35);
+	}	
+
+	GameManager::getInstance()->GetSpecialList()->Printspecal(92, 35);
 }
+
+
 
 void Scene::PrintButtonList(list<Button*> ButtonList, list<Button*>::iterator CurrentButton)
 {

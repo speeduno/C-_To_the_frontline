@@ -40,6 +40,13 @@ void Start::Update()
 
             Player* player = new Player();
             player->pname = name;      //플레이어 정보 입력하기
+            player->namesize = name.size();
+            player->title = "용병단";
+            player->titlesize = 6;
+            player->catle = 0;
+            player->power = 625;
+            player->gold = 1000;
+
             GameManager::getInstance()->SetPlayerInfo(player);
             //GameManager::getInstance()->SetCurrStage();
             GameManager::getInstance()->changeScene(LOBBY);           

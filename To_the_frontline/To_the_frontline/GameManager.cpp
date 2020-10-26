@@ -17,7 +17,9 @@ GameManager::GameManager()
 	//LoadStageList(StageList, "./data/StageList.txt");
 
 	MyPlayer = new Player();
-	//LoadPlayerInfo(MyPlayer, "./data/PlayerInfo.txt");
+	LoadPlayerInfo(MyPlayer, "./data/Player_Info.txt");
+
+	MySpecial = new SpecialArmy();
 
 	//CurrStage = (*StageList)[MyPlayer->stage_num];
 
@@ -77,6 +79,16 @@ vector<MyArmy*>* GameManager::GetArmyList()
 void GameManager::SetArmyList(vector<MyArmy*>* list)
 {
 	ArmyList = list;
+}
+
+SpecialArmy* GameManager::GetSpecialList()
+{
+	return MySpecial;
+}
+
+void GameManager::SetSpecailList(SpecialArmy* special)
+{
+	MySpecial = special;
 }
 
 //vector<Stage*>* GameManager::GetStageList()

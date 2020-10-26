@@ -15,4 +15,7 @@ public:
 	virtual void Draw();
 	virtual void Destroy();
 
+	void NormalGacha();
+	void SpecialGacha();
+
 };

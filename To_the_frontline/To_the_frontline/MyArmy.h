@@ -9,8 +9,9 @@ public:
 	int level;
 	int hp;		//군사수
 	int max_hp;
-	int damage;
-	int type; //0.보병 1.포병 2.기병, 3정찰병, 4저격수, 5장군
+	float damage;
+	int speed;
+	int type; //0.보병 1.궁병 2.기병, 3정찰병, 4저격수, 5장군
 
 
 public:

@@ -54,7 +54,7 @@ void Title::Update()
             case ENTER:
                 if ((*CurrentButton)->num == 0)    // 처음부터
                     GameManager::getInstance()->changeScene(START);
-                if ((*CurrentButton)->num == 1)    // 이어서
+                if ((*CurrentButton)->num == 1)    // 이어서           ->추가 기능 리스트작업(불러오기 여러개)
                     GameManager::getInstance()->changeScene(LOBBY);
                 if ((*CurrentButton)->num == 2)    // 종료
                 {
