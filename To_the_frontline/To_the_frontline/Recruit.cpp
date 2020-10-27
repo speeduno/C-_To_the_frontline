@@ -59,7 +59,7 @@ void Recruit::Update()
                 }
                 if ((*CurrentButton)->num == 1)    // 특별채용
                 {
-
+                    SpecialGacha();
                 }
 
                 if ((*CurrentButton)->num == 2)    // 나가기
@@ -103,7 +103,6 @@ void Recruit::NormalGacha()
     }
 
     GameManager::getInstance()->GetPlayerInfo()->gold -= 250;
-    string name;
     int idx;
     int max;
 
@@ -128,7 +127,7 @@ void Recruit::NormalGacha()
     GoToXY(40, 3);	printf("!                                              !");
     GoToXY(40, 3);	printf("!                   모집 결과                  !");
     GoToXY(40, 4);	printf("!                                              !");
-    GoToXY(40, 5);	printf("!                  %s : %d명                 !", (*GameManager::getInstance()->GetArmyList())[idx]->name.c_str(), max);
+    GoToXY(40, 5);	printf("!                  %s : %d명               !", name[idx].c_str(), max);
     GoToXY(40, 6);	printf("!                                              !");
     GoToXY(40, 7);	printf("!                                              !");
     GoToXY(40, 8);	printf("!                                              !");
@@ -137,7 +136,7 @@ void Recruit::NormalGacha()
 
     if ((*GameManager::getInstance()->GetArmyList())[idx]->hp != (*GameManager::getInstance()->GetArmyList())[idx]->max_hp)
     {
-        (*GameManager::getInstance()->GetArmyList())[idx]->hp += 100;
+        (*GameManager::getInstance()->GetArmyList())[idx]->hp += max;
 
         if ((*GameManager::getInstance()->GetArmyList())[idx]->hp > (*GameManager::getInstance()->GetArmyList())[idx]->max_hp)
         {
@@ -145,13 +144,120 @@ void Recruit::NormalGacha()
             GoToXY(40, 8);	printf("! *보급만큼 군사가 채워지며 나머진 버려집니다.*!");
         }
     }
+    
 
     else
     {
         GoToXY(40, 7);	printf("!  *보급보다 많은 군사를 모집할 수 없습니다.*  !");
     }
+
+    DrawArmyList();
 }
 
 void Recruit::SpecialGacha()
 {
+    Draw();
+
+    if (GameManager::getInstance()->GetPlayerInfo()->gold < 1000)
+    {
+        GoToXY(40, 4);	printf("골드가 부족합니다.");
+       return;
+    }
+
+    GameManager::getInstance()->GetPlayerInfo()->gold -= 1000;
+  
+    int idx;
+    int max;
+
+    random_device random;
+    mt19937 gen(random());
+    uniform_int_distribution<int> dis1(0, 5);
+    idx = dis1(gen);
+
+    int man = 100;
+    if (idx == 0)
+        man = 100;
+    if (idx == 1)
+        man = 50;
+    if (idx == 2)
+        man = 30;
+    uniform_int_distribution<int> dis2(10, man);
+    max = dis2(gen);
+
+    if (idx >= 3)
+        max = 1;
+
+    SetTextColor(10);
+    GoToXY(40, 2);	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    GoToXY(40, 3);	printf("!                                              !");
+    GoToXY(40, 3);	printf("!                   모집 결과                  !");
+    GoToXY(40, 4);	printf("!                                              !");
+    GoToXY(40, 5);	printf("!                  %s : %d명               ", name[idx].c_str(), max);
+    if(idx >=3) printf(" ");
+    printf("!");
+    GoToXY(40, 6);	printf("!                                              !");
+    GoToXY(40, 7);	printf("!                                              !");
+    GoToXY(40, 8);	printf("!                                              !");
+    GoToXY(40, 9);	printf("!                                              !");
+    GoToXY(40, 10);	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                    
+
+    if (idx < 3)
+    {
+        if ((*GameManager::getInstance()->GetArmyList())[idx]->hp != (*GameManager::getInstance()->GetArmyList())[idx]->max_hp)
+        {
+            (*GameManager::getInstance()->GetArmyList())[idx]->hp += max;
+
+            if ((*GameManager::getInstance()->GetArmyList())[idx]->hp > (*GameManager::getInstance()->GetArmyList())[idx]->max_hp)
+            {
+                (*GameManager::getInstance()->GetArmyList())[idx]->hp = (*GameManager::getInstance()->GetArmyList())[idx]->max_hp;
+                GoToXY(40, 8);	printf("! *보급만큼 군사가 채워지며 나머진 버려집니다.*!");
+            }
+        }
+
+        else
+        {
+            GoToXY(40, 7);	printf("!  *보급보다 많은 군사를 모집할 수 없습니다.*  !");
+        }
+    }
+
+    else
+    {
+        GoToXY(40, 7);	printf("!         *특별채용에 성공하였습니다.*         !");
+
+        if (idx == 3)
+        {
+            if (GameManager::getInstance()->GetSpecialList()->general >= 9)
+            {
+                GoToXY(40, 8);	printf("!   *장  군은 9명 이상 채용할 수 없습니다.*   !");
+            }
+       
+            else
+            GameManager::getInstance()->GetSpecialList()->general += max;
+        }
+            
+        if (idx == 4)
+        {
+            if (GameManager::getInstance()->GetSpecialList()->recon >= 9)
+            {
+                GoToXY(40, 8);	printf("!   *정찰병은 9명 이상 채용할 수 없습니다.*   !");
+            }
+
+            else
+                GameManager::getInstance()->GetSpecialList()->recon += max;
+        }
+         
+        if (idx == 5)
+        {
+            if (GameManager::getInstance()->GetSpecialList()->sniper >= 9)
+            {
+                GoToXY(40, 8);	printf("!   *저격수는 9명 이상 채용할 수 없습니다.*   !");
+            }
+
+            else
+                GameManager::getInstance()->GetSpecialList()->sniper += max;
+        }
+    }
+
+    DrawArmyList();
 }

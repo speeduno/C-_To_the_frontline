@@ -7,11 +7,11 @@ Barracks::~Barracks()
 
 void Barracks::Init()
 {
-    Button* sel_1 = new Button("휴식", 0, 20, 18);
+    Button* sel_1 = new Button("보급량 늘리기 => 최대군사수 증가", 0, 20, 18);
     ButtonList.push_back(sel_1);
-    Button* sel_2 = new Button("훈련", 1, 20, 20);
+    Button* sel_2 = new Button("정신교육 => 사기치 증가", 1, 20, 20);
     ButtonList.push_back(sel_2);
-    Button* sel_3 = new Button("정신교육", 2, 20, 22);
+    Button* sel_3 = new Button("휴식 => 부상자 치유", 2, 20, 22);
     ButtonList.push_back(sel_3);
     Button* sel_4 = new Button("나가기", 3, 20, 26);
     ButtonList.push_back(sel_4);

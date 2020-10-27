@@ -38,9 +38,9 @@ void MyArmy::PrintInfo(SHORT x, SHORT y)
 	GoToXY(x, y + 4);	printf("# 레벨   %d                 #", level);
 	GoToXY(x, y + 5);	printf("# 군 사 수 : ");
 
-	for (int i = 0; i <14-(hp / 100); i++)
+	for (int i = 0; i < 14-(ceil((float)hp / 100)); i++)
 	{
-		if ((hp / 100) > i)
+		if (ceil((float)hp / 100) > i)
 			printf("■");
 		else
 			printf(" ");
