@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Barracks.cpp" />
     <ClCompile Include="Battle.cpp" />
+    <ClCompile Include="equip.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Info.cpp" />
     <ClCompile Include="Lobby.cpp" />
@@ -162,6 +163,7 @@
   <ItemGroup>
     <ClInclude Include="Barracks.h" />
     <ClInclude Include="Battle.h" />
+    <ClInclude Include="equip.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Info.h" />
     <ClInclude Include="Lobby.h" />

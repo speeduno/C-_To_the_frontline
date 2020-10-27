@@ -33,8 +33,9 @@ void LoadArmyList(vector<MyArmy*>* ArmyList, string FileName)
 		{
 			MyArmy* p = new MyArmy();
 
-			fscanf(pRead, "%d %s %d %d %d %f %d %d",
-				&(p->name_length), p->name.c_str(), &(p->level), &(p->hp), &(p->max_hp), &(p->damage), &(p->speed), &(p->type));
+			fscanf(pRead, "%d %s %d %d %d %f %d %d %d",
+				&(p->name_length), p->name.c_str(), &(p->level), &(p->hp), &(p->max_hp), 
+				&(p->damage), &(p->speed), &(p->type), &(p->supplycost));
 
 			ArmyList->push_back(p);
 		}
@@ -83,7 +84,8 @@ void LoadPlayerInfo(Player* player, string FileName)
 		//Player* p = new Player();
 
 		fscanf(pRead, "%d %d %d %d %d %s %s",
-			&(player->catle), &(player->gold), &(player->power), &(player->namesize), &(player->titlesize), player->pname.c_str(), player->title.c_str());
+			&(player->catle), &(player->gold), &(player->power), &(player->namesize), &(player->titlesize),
+			player->pname.c_str(), player->title.c_str());
 	}
 
 	else

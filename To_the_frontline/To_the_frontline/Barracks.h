@@ -5,6 +5,9 @@
 class Barracks : public Scene
 {
 public:
+	bool mindtraining;
+	bool training;
+	bool rest;
 
 public:
 	Barracks(SCENE_TYPE scType, string name) : Scene(scType, name) {}
@@ -15,4 +18,6 @@ public:
 	virtual void Draw();
 	virtual void Destroy();
 
+	void IncreaseSupply(int idx);
+	void Drawchoice();
 };
