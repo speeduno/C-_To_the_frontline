@@ -18,6 +18,10 @@ public:
 	virtual void Draw();
 	virtual void Destroy();
 
-	void IncreaseSupply(int idx);
 	void Drawchoice();
+	void DrawComplete();
+	void IncreaseSupply(int idx);	
+	void MindTraining(int idx);
+	void Rest(int idx);
+	void Training(int idx);
 };

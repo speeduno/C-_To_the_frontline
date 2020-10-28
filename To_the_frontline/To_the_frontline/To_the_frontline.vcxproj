@@ -146,7 +146,7 @@
     <ClCompile Include="Info.cpp" />
     <ClCompile Include="Lobby.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MyArmy.cpp">
+    <ClCompile Include="Army.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">아니오</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Player.cpp">
@@ -167,7 +167,7 @@
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Info.h" />
     <ClInclude Include="Lobby.h" />
-    <ClInclude Include="MyArmy.h">
+    <ClInclude Include="Army.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">아니오</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="Player.h">

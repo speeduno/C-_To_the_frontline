@@ -45,14 +45,14 @@ extern void SetTextColor(int num);					// 다음 텍스트의 색깔로 바꿔주는 함수 (0 
 extern void SetCursorVisible(bool bVisible);			// 입력 커서를 보이게/안보이게 하는 함수
 
 // 파일 입출력
-class MyArmy;
+class Army;
 class Player;
 //class Stage;
 //class Exp;
 class Button;
 
 // 스타트 병사 리스트, 적 군등을 텍스트 파일로부터 불러옴
-extern void LoadArmyList(vector<MyArmy*>* ArmyList, string FileName);
+extern void LoadArmyList(vector<Army*>* ArmyList, string FileName);
 
 //// 포켓몬 리스트를 텍스트 파일로 저장
 //extern void SavePoketmonList(vector<Poketmon*>* PoketmonList, string FileName);

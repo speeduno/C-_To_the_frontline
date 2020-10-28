@@ -10,7 +10,7 @@
 
 GameManager::GameManager()
 {
-	ArmyList = new vector<MyArmy*>;
+	ArmyList = new vector<Army*>;
 	LoadArmyList(ArmyList, "./data/Start_Army.txt");
 
 	//StageList = new vector<Stage*>;
@@ -71,12 +71,12 @@ GameManager::~GameManager()
 	}
 }
 
-vector<MyArmy*>* GameManager::GetArmyList()
+vector<Army*>* GameManager::GetArmyList()
 {
 	return ArmyList;
 }
 
-void GameManager::SetArmyList(vector<MyArmy*>* list)
+void GameManager::SetArmyList(vector<Army*>* list)
 {
 	ArmyList = list;
 }

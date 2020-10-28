@@ -1,5 +1,5 @@
 #include "Scene.h"
-#include "MyArmy.h"
+#include "Army.h"
 #include "Player.h"
 #include "SpecialArmy.h"
 

@@ -1,17 +1,6 @@
 #pragma once
 #include "info.h"
 
-enum ARMY_TYPE
-{
-	FOOTMAN = 0,
-	BOWMAN,
-	KNIGHT,
-	GENERAL,
-	SNIPER,
-	SCOUT,
-};
-
-
 class Player
 {
 public:

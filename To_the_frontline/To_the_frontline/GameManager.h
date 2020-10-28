@@ -1,7 +1,7 @@
 #pragma once
 #include "Info.h"
 #include "player.h"
-#include "MyArmy.h"
+#include "Army.h"
 #include "SpecialArmy.h"
 
 enum SCENE_TYPE
@@ -18,7 +18,7 @@ enum SCENE_TYPE
 
 class Scene;
 class Plyaer;
-class MyArmy;
+class Army;
 class SpecialArmy;
 
 class GameManager
@@ -32,13 +32,14 @@ private:
 	//vector<Stage*>* StageList;		// 전체 스테이지 리스트
 	//Stage* CurrStage;					// 현재 위치한 스테이지
 
-	vector<MyArmy*>* ArmyList;			// 소유 군사 리스트
+	vector<Army*>* ArmyList;			// 소유 군사 리스트
 	SpecialArmy* MySpecial;				// 스페셜리스트
 	Player* MyPlayer;					// 플레이어 정보
 	GameManager();
 	~GameManager();
 
 public:
+
 	static GameManager* getInstance()
 	{
 		if (instance == nullptr)
@@ -47,8 +48,8 @@ public:
 		return instance;
 	}
 
-	vector<MyArmy*>* GetArmyList();
-	void SetArmyList(vector<MyArmy*>* list);
+	vector<Army*>* GetArmyList();
+	void SetArmyList(vector<Army*>* list);
 
 	SpecialArmy* GetSpecialList();
 	void SetSpecailList(SpecialArmy*  special);

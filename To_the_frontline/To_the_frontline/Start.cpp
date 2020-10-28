@@ -29,7 +29,7 @@ void Start::Update()
         switch (key)
         {
         case ENTER:
-            vector<MyArmy*>* list = new vector<MyArmy*>;
+            vector<Army*>* list = new vector<Army*>;
             
             for(int i = 0; i< MyArmyList.size(); i++)
             {

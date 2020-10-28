@@ -1,5 +1,5 @@
 #include "Recruit.h"
-#include "MyArmy.h"
+#include "Army.h"
 
 Recruit::~Recruit()
 {

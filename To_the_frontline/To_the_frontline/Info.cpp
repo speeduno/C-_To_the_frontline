@@ -1,5 +1,6 @@
 #include "Info.h"
-#include "MyArmy.h"
+#include "Player.h"
+#include "Army.h"
 
 void GoToXY(SHORT x, SHORT y)
 {
@@ -20,7 +21,7 @@ void SetTextColor(int num)
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), num);
 }
 
-void LoadArmyList(vector<MyArmy*>* ArmyList, string FileName)
+void LoadArmyList(vector<Army*>* ArmyList, string FileName)
 {
 	FILE* pRead = fopen(FileName.c_str(), "rt");
 
@@ -31,11 +32,11 @@ void LoadArmyList(vector<MyArmy*>* ArmyList, string FileName)
 
 		for (int i = 0; i < count; i++)
 		{
-			MyArmy* p = new MyArmy();
+			Army* p = new Army();
 
-			fscanf(pRead, "%d %s %d %d %d %f %d %d %d",
-				&(p->name_length), p->name.c_str(), &(p->level), &(p->hp), &(p->max_hp), 
-				&(p->damage), &(p->speed), &(p->type), &(p->supplycost));
+			fscanf(pRead, "%d %s %d %d %d %d %f %f %d %d %d",
+				&(p->name_length), p->name.c_str(), &(p->type) ,&(p->level), &(p->hp), &(p->max_hp), 
+				&(p->damage), &(p->maxdamage), &(p->speed), &(p->supplycost), &(p->morale));
 
 			ArmyList->push_back(p);
 		}

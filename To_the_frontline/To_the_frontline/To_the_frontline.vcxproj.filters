@@ -69,17 +69,17 @@
     <ClCompile Include="Player.cpp">
       <Filter>소스 파일\Object</Filter>
     </ClCompile>
-    <ClCompile Include="MyArmy.cpp">
-      <Filter>소스 파일\Object</Filter>
-    </ClCompile>
     <ClCompile Include="SpecialArmy.cpp">
       <Filter>소스 파일\Object</Filter>
     </ClCompile>
     <ClCompile Include="equip.cpp">
       <Filter>소스 파일\Object</Filter>
     </ClCompile>
-    <ClCompile Include="Info.cpp">
+    <ClCompile Include="Army.cpp">
       <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Info.cpp">
+      <Filter>소스 파일\Global</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -119,13 +119,13 @@
     <ClInclude Include="Player.h">
       <Filter>헤더 파일\Object</Filter>
     </ClInclude>
-    <ClInclude Include="MyArmy.h">
-      <Filter>헤더 파일\Object</Filter>
-    </ClInclude>
     <ClInclude Include="SpecialArmy.h">
       <Filter>헤더 파일\Object</Filter>
     </ClInclude>
     <ClInclude Include="equip.h">
+      <Filter>헤더 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Army.h">
       <Filter>헤더 파일\Object</Filter>
     </ClInclude>
   </ItemGroup>
