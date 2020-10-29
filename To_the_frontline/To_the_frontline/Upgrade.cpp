@@ -84,7 +84,8 @@ void Upgrade::Draw()
     //DrawPlayerInfo();
 
     //아군상황 그리기
-    DrawArmyList();
+    DrawEquipList();
+    //DrawArmyList();
 
     PrintButtonList(ButtonList, CurrentButton);
 }

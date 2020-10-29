@@ -38,7 +38,7 @@ public:
 
 	void DrawSceneName();						// 현재 씬의 이름을 출력하는 함수
 	void DrawPlayerInfo();						// 플레이어 정보를 출력하는 함수
-	void DrawStageInfo();						// 현재 스테이지의 이름을 출력하는 함수
+	void DrawEquipList();
 	void DrawArmyList();						// 플레이어가 가지고 있는 군사 리스트를 출력하는 함수
 
 														

@@ -13,15 +13,13 @@ GameManager::GameManager()
 	ArmyList = new vector<Army*>;
 	LoadArmyList(ArmyList, "./data/Start_Army.txt");
 
-	//StageList = new vector<Stage*>;
-	//LoadStageList(StageList, "./data/StageList.txt");
-
-	MyPlayer = new Player();
-	LoadPlayerInfo(MyPlayer, "./data/Player_Info.txt");
+	EquipList = new vector<Equip*>;
+	LoadEquipList(EquipList, "./data/Start_Equip.txt");
 
 	MySpecial = new SpecialArmy();
 
-	//CurrStage = (*StageList)[MyPlayer->stage_num];
+	MyPlayer = new Player();
+	LoadPlayerInfo(MyPlayer, "./data/Player_Info.txt");
 
 	SceneList.reserve(8);
 
@@ -64,6 +62,16 @@ GameManager::~GameManager()
 	}
 	ArmyList->clear();
 
+	for (int i = 0; i < (int)EquipList->size(); i++)
+	{
+		if ((*EquipList)[i] != NULL)
+		{
+			delete (*EquipList)[i];
+			(*EquipList)[i] = NULL;
+		}
+	}
+	EquipList->clear();
+
 	if (MyPlayer != NULL)
 	{
 		delete MyPlayer;
@@ -81,6 +89,16 @@ void GameManager::SetArmyList(vector<Army*>* list)
 	ArmyList = list;
 }
 
+vector<Equip*>* GameManager::GetEquipList()
+{
+	return EquipList;
+}
+
+void GameManager::SetEquipList(vector<Equip*>* list)
+{
+	EquipList = list;
+}
+
 SpecialArmy* GameManager::GetSpecialList()
 {
 	return MySpecial;
@@ -90,21 +108,6 @@ void GameManager::SetSpecailList(SpecialArmy* special)
 {
 	MySpecial = special;
 }
-
-//vector<Stage*>* GameManager::GetStageList()
-//{
-//	return StageList;
-//}
-
-//Stage* GameManager::GetCurrStage()
-//{
-//	return CurrStage;
-//}
-
-//void GameManager::SetCurrStage()
-//{
-//	//CurrStage = (*GetStageList())[MyPlayer->stage_num];
-//}
 
 Player* GameManager::GetPlayerInfo()
 {

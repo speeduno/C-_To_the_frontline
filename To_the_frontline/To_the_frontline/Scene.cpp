@@ -33,11 +33,21 @@ void Scene::DrawPlayerInfo()
 	GameManager::getInstance()->GetPlayerInfo()->PrintPlayerInfo(2, 2);
 }
 
-void Scene::DrawStageInfo()
+void Scene::DrawEquipList()
 {
-	GoToXY(Stage_X, Stage_Y);
-	SetTextColor(13);
-	//printf("[ 현재 위치 : %s ]", GameManager::getInstance()->GetCurrStage()->name.c_str());
+	SetTextColor(15);
+	GoToXY(0, 31);
+	for (int i = 0; i < 128; i++)
+		printf("-");
+
+	GoToXY(1, 33);
+	SetTextColor(14);
+	printf("[장비]");
+
+	for (int i = 0; i < (int)GameManager::getInstance()->GetEquipList()->size(); i++)
+	{
+		(*GameManager::getInstance()->GetEquipList())[i]->PrintInfo(2 + i * 30, 35);
+	}
 }
 
 void Scene::DrawArmyList()
@@ -58,8 +68,6 @@ void Scene::DrawArmyList()
 
 	GameManager::getInstance()->GetSpecialList()->Printspecal(92, 35);
 }
-
-
 
 void Scene::PrintButtonList(list<Button*> ButtonList, list<Button*>::iterator CurrentButton)
 {

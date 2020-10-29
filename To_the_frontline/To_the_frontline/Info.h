@@ -47,24 +47,23 @@ extern void SetCursorVisible(bool bVisible);			// 입력 커서를 보이게/안보이게 하
 // 파일 입출력
 class Army;
 class Player;
-//class Stage;
-//class Exp;
+class Equip;
 class Button;
 
 // 스타트 병사 리스트, 적 군등을 텍스트 파일로부터 불러옴
 extern void LoadArmyList(vector<Army*>* ArmyList, string FileName);
 
-//// 포켓몬 리스트를 텍스트 파일로 저장
+//병사 리스트를 텍스트 파일로 저장
 //extern void SavePoketmonList(vector<Poketmon*>* PoketmonList, string FileName);
 
 // 플레이어 정보를 텍스트 파일로부터 불러옴
 extern void LoadPlayerInfo(Player* player, string FileName);
 
-//// 플레이어 정보를 텍스트 파일로 저장
+// 플레이어 정보를 텍스트 파일로 저장
 //extern void SavePlayerInfo(Player* player, string FileName);
 //
-//// 스테이지 정보를 텍스트 파일로부터 불러옴
-//extern void LoadStageList(vector<Stage*>* StageList, string FileName);
+// 스테이지 정보를 텍스트 파일로부터 불러옴
+extern void LoadEquipList(vector<Equip*>* EquipList, string FileName);
 //
-//// 경험치표를 텍스트 파일로부터 불러옴
-//extern void LoadExpTable(vector<Exp*>* ExpTable, string FileName);
+// 장비 정보를 텍스트 파일로 저장
+//extern void SaveEquipInfo(ector<Equip*>* EquipList, string FileName);

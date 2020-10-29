@@ -1,7 +1,7 @@
 #pragma once
-#include "Army.h"
+#include "Info.h"
 
-class SpecialArmy :public Army
+class SpecialArmy
 {
 public:
 	int general;

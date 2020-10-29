@@ -1,6 +1,7 @@
 #include "Info.h"
 #include "Player.h"
 #include "Army.h"
+#include "Equip.h"
 
 void GoToXY(SHORT x, SHORT y)
 {
@@ -11,7 +12,7 @@ void GoToXY(SHORT x, SHORT y)
 void SetCursorVisible(bool bVisible)
 {
 	CONSOLE_CURSOR_INFO ConsoleCursor;
-	ConsoleCursor.bVisible = bVisible;		// true 보임, false 안보임
+	ConsoleCursor.bVisible = bVisible;			// true 보임, false 안보임
 	ConsoleCursor.dwSize = 1;					// 커서사이즈
 	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &ConsoleCursor);
 }
@@ -114,66 +115,35 @@ void LoadPlayerInfo(Player* player, string FileName)
 //
 //	fclose(pWrite);
 //}
-//
-//void LoadStageList(vector<Stage*>* StageList, string FileName)
-//{
-//	FILE* pRead = fopen(FileName.c_str(), "rt");
-//
-//	if (pRead != NULL)
-//	{
-//		int count = 0;
-//		fscanf(pRead, "%d", &count);
-//
-//		for (int i = 0; i < count; i++)
-//		{
-//			Stage* s = new Stage();
-//
-//			char temp[MAX_STRING_SIZE];
-//			fscanf(pRead, "%s %d %s", s->name.c_str(), &(s->required_level), temp);
-//
-//			string EnemyList_FileName = temp;
-//			LoadPoketmonList(s->EnemyList, EnemyList_FileName);
-//
-//			StageList->push_back(s);
-//		}
-//	}
-//
-//	else
-//	{
-//		FILE* pWrite = fopen(FileName.c_str(), "wt");
-//		fprintf(pWrite, "%d\n", 0);
-//		fclose(pWrite);
-//	}
-//
-//	fclose(pRead);
-//}
-//
-//void LoadExpTable(vector<Exp*>* ExpTable, string FileName)
-//{
-//	FILE* pRead = fopen(FileName.c_str(), "rt");
-//
-//	if (pRead != NULL)
-//	{
-//		int count = 0;
-//		fscanf(pRead, "%d", &count);
-//
-//		for (int i = 0; i < count; i++)
-//		{
-//			Exp* e = new Exp();
-//
-//			fscanf(pRead, "%d %d",
-//				&(e->level), &(e->required_exp));
-//
-//			ExpTable->push_back(e);
-//		}
-//	}
-//
-//	else
-//	{
-//		FILE* pWrite = fopen(FileName.c_str(), "wt");
-//		fprintf(pWrite, "%d\n", 0);
-//		fclose(pWrite);
-//	}
-//
-//	fclose(pRead);
-//}
+
+void LoadEquipList(vector<Equip*>* EquipList, string FileName)
+{
+	FILE* pRead = fopen(FileName.c_str(), "rt");
+
+	if (pRead != NULL)
+	{
+		int count = 0;
+		fscanf(pRead, "%d", &count);
+
+		for (int i = 0; i < count; i++)
+		{
+			Equip* p = new Equip();
+
+			fscanf(pRead, "%d %s %d %d %f %f %f",
+				&(p->name_length), p->name.c_str(), &(p->type), &(p->level),
+				&(p->atk), &(p->def), &(p->speed));
+
+			EquipList->push_back(p);
+		}
+	}
+
+	else
+	{
+		FILE* pWrite = fopen(FileName.c_str(), "wt");
+		fprintf(pWrite, "%d\n", 0);
+		fclose(pWrite);
+	}
+
+	fclose(pRead);
+
+}

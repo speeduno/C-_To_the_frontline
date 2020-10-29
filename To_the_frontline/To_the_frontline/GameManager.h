@@ -3,6 +3,7 @@
 #include "player.h"
 #include "Army.h"
 #include "SpecialArmy.h"
+#include "Equip.h"
 
 enum SCENE_TYPE
 {
@@ -20,6 +21,7 @@ class Scene;
 class Plyaer;
 class Army;
 class SpecialArmy;
+class Equip;
 
 class GameManager
 {
@@ -29,11 +31,9 @@ private:
 	vector<Scene*>		SceneList;		// 전체 씬 리스트
 	Scene* CurrScene;					// 현재 활성화된 씬. 이 변수의 내용을 초기화하면서 씬의 이동 구현
 
-	//vector<Stage*>* StageList;		// 전체 스테이지 리스트
-	//Stage* CurrStage;					// 현재 위치한 스테이지
-
 	vector<Army*>* ArmyList;			// 소유 군사 리스트
 	SpecialArmy* MySpecial;				// 스페셜리스트
+	vector<Equip*>* EquipList;			// 장비리스트
 	Player* MyPlayer;					// 플레이어 정보
 	GameManager();
 	~GameManager();
@@ -54,9 +54,8 @@ public:
 	SpecialArmy* GetSpecialList();
 	void SetSpecailList(SpecialArmy*  special);
 
-	//vector<Stage*>* GetStageList();
-	//Stage* GetCurrStage();
-	//void SetCurrStage();
+	vector<Equip*>* GetEquipList();
+	void SetEquipList(vector<Equip*>* list);
 
 	Player* GetPlayerInfo();
 	void SetPlayerInfo(Player* player);

@@ -1,5 +1,4 @@
 #include "SpecialArmy.h"
-#include "Info.h"
 
 SpecialArmy::SpecialArmy()
 {

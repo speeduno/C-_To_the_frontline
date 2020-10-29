@@ -6,9 +6,6 @@ enum ARMY_TYPE
 	FOOTMAN = 0,
 	BOWMAN,
 	KNIGHT,
-	GENERAL,
-	SNIPER,
-	SCOUT,
 };
 
 class Army
@@ -23,6 +20,7 @@ public:
 	float damage;
 	float maxdamage;
 	int speed;
+	
 	//추가사항
 	int supplycost;
 	int morale;			//사기치는 한계가 없다.

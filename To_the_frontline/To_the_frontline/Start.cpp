@@ -14,6 +14,7 @@ void Start::Init()
     SetCursorVisible(false);
 
     LoadArmyList(&MyArmyList, "./data/Start_Army.txt");
+    LoadEquipList(&MyEquipList, "./data/Start_Equip.txt");
 
     Draw();
 }
@@ -29,14 +30,21 @@ void Start::Update()
         switch (key)
         {
         case ENTER:
-            vector<Army*>* list = new vector<Army*>;
+            vector<Army*>* Alist = new vector<Army*>;
+            vector<Equip*>* Elist = new vector<Equip*>;
             
             for(int i = 0; i< MyArmyList.size(); i++)
             {
-                list->push_back(MyArmyList[i]);
+                Alist->push_back(MyArmyList[i]);
+            }
+
+            for (int i = 0; i < MyEquipList.size(); i++)
+            {
+                Elist->push_back(MyEquipList[i]);
             }
            
-            GameManager::getInstance()->SetArmyList(list);
+            GameManager::getInstance()->SetArmyList(Alist);
+            GameManager::getInstance()->SetEquipList(Elist);
 
             Player* player = new Player();
             player->pname = name;      //플레이어 정보 입력하기
@@ -48,7 +56,7 @@ void Start::Update()
             player->gold = 1000;
 
             GameManager::getInstance()->SetPlayerInfo(player);
-            //GameManager::getInstance()->SetCurrStage();
+
             GameManager::getInstance()->changeScene(LOBBY);           
             break;       
         }
