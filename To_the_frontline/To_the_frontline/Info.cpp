@@ -1,6 +1,7 @@
 #include "Info.h"
 #include "Player.h"
-#include "Army.h"
+#include "MyArmy.h"
+#include "EnermyArmy.h"
 #include "Equip.h"
 
 void GoToXY(SHORT x, SHORT y)
@@ -22,7 +23,7 @@ void SetTextColor(int num)
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), num);
 }
 
-void LoadArmyList(vector<Army*>* ArmyList, string FileName)
+void LoadArmyList(vector<MyArmy*>* ArmyList, string FileName)
 {
 	FILE* pRead = fopen(FileName.c_str(), "rt");
 
@@ -33,7 +34,7 @@ void LoadArmyList(vector<Army*>* ArmyList, string FileName)
 
 		for (int i = 0; i < count; i++)
 		{
-			Army* p = new Army();
+			MyArmy* p = new MyArmy();
 
 			fscanf(pRead, "%d %s %d %d %d %d %f %f %d %d %d",
 				&(p->name_length), p->name.c_str(), &(p->type) ,&(p->level), &(p->hp), &(p->max_hp), 
@@ -76,6 +77,37 @@ void LoadArmyList(vector<Army*>* ArmyList, string FileName)
 //
 //	fclose(pWrite);
 //}
+
+void LoadEnermyList(vector<EnermyArmy*>* ArmyList, string FileName)
+{
+	FILE* pRead = fopen(FileName.c_str(), "rt");
+
+	if (pRead != NULL)
+	{
+		int count = 0;
+		fscanf(pRead, "%d", &count);
+
+		for (int i = 0; i < count; i++)
+		{
+			EnermyArmy* p = new EnermyArmy();
+
+			fscanf(pRead, "%d %s %d %d %d %d %f %f %d %d %d",
+				&(p->name_length), p->name.c_str(), &(p->type), &(p->level), &(p->hp), &(p->max_hp),
+				&(p->damage), &(p->maxdamage), &(p->speed), &(p->supplycost), &(p->morale));
+
+			ArmyList->push_back(p);
+		}
+	}
+
+	else
+	{
+		FILE* pWrite = fopen(FileName.c_str(), "wt");
+		fprintf(pWrite, "%d\n", 0);
+		fclose(pWrite);
+	}
+
+	fclose(pRead);
+}
 
 void LoadPlayerInfo(Player* player, string FileName)
 {

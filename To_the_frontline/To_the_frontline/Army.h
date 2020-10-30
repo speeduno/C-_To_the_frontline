@@ -9,7 +9,7 @@ enum ARMY_TYPE
 };
 
 class Army
-{ 
+{
 public:
 	string name;
 	int name_length;
@@ -20,7 +20,7 @@ public:
 	float damage;
 	float maxdamage;
 	int speed;
-	
+
 	//추가사항
 	int supplycost;
 	int morale;			//사기치는 한계가 없다.
@@ -31,6 +31,6 @@ public:
 	~Army();
 	Army(const Army& army);		// 깊은 복사 생성자
 
-	void PrintInfo(SHORT x, SHORT y);
+	virtual void PrintInfo(SHORT x, SHORT y) = 0 {};
 };
 

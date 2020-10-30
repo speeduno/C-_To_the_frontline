@@ -11,7 +11,7 @@ void Upgrade::Init()
     ButtonList.push_back(sel_1);
     Button* sel_2 = new Button("더 좋은 무기", 1, 20, 20);
     ButtonList.push_back(sel_2);
-    Button* sel_3 = new Button("특수 훈련 (정찰병, 저격수 전용)", 2, 20, 22);
+    Button* sel_3 = new Button("특수 장비 (정찰병, 저격수 전용)", 2, 20, 22);
     ButtonList.push_back(sel_3);
     Button* sel_4 = new Button("나가기", 3, 20, 24);
     ButtonList.push_back(sel_4);
@@ -80,13 +80,10 @@ void Upgrade::Draw()
     system("cls");
 
     DrawSceneName();
-    //DrawStageInfo();			//정보값들은 오브젝트를 생성해주고 설정
-    //DrawPlayerInfo();
+    DrawPlayerInfo();
 
-    //아군상황 그리기
+    //아군장비 그리기
     DrawEquipList();
-    //DrawArmyList();
-
     PrintButtonList(ButtonList, CurrentButton);
 }
 
@@ -94,3 +91,5 @@ void Upgrade::Destroy()
 {
     OnOff = false;
 }
+
+

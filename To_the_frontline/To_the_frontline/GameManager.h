@@ -1,7 +1,8 @@
 #pragma once
 #include "Info.h"
 #include "player.h"
-#include "Army.h"
+#include "MyArmy.h"
+#include "EnermyArmy.h"
 #include "SpecialArmy.h"
 #include "Equip.h"
 
@@ -19,7 +20,8 @@ enum SCENE_TYPE
 
 class Scene;
 class Plyaer;
-class Army;
+class MyArmy;
+class EnermyArmy;
 class SpecialArmy;
 class Equip;
 
@@ -31,7 +33,8 @@ private:
 	vector<Scene*>		SceneList;		// 전체 씬 리스트
 	Scene* CurrScene;					// 현재 활성화된 씬. 이 변수의 내용을 초기화하면서 씬의 이동 구현
 
-	vector<Army*>* ArmyList;			// 소유 군사 리스트
+	vector<MyArmy*>* ArmyList;			// 소유 군사 리스트
+	vector<EnermyArmy*>* EnermyList;	// 소유 군사 리스트
 	SpecialArmy* MySpecial;				// 스페셜리스트
 	vector<Equip*>* EquipList;			// 장비리스트
 	Player* MyPlayer;					// 플레이어 정보
@@ -48,8 +51,11 @@ public:
 		return instance;
 	}
 
-	vector<Army*>* GetArmyList();
-	void SetArmyList(vector<Army*>* list);
+	vector<MyArmy*>* GetArmyList();
+	void SetArmyList(vector<MyArmy*>* list);
+
+	vector<EnermyArmy*>* GetEnermyList();
+	void SetEnermyList(vector<EnermyArmy*>* list);
 
 	SpecialArmy* GetSpecialList();
 	void SetSpecailList(SpecialArmy*  special);

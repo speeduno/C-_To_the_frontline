@@ -37,7 +37,7 @@ void Equip::PrintInfo(SHORT x, SHORT y)
 	GoToXY(x, y + 4);	printf("# 레벨   %d                 #", level);
 	GoToXY(x, y + 5);	printf("# 공격력 : ");
 
-	for (int i = 0; i < 14 - atk * 10; i++)
+	for (int i = 0; i < 16 - atk * 10; i++)
 	{
 		if ((atk *10) > i)
 			printf("■");
@@ -50,7 +50,7 @@ void Equip::PrintInfo(SHORT x, SHORT y)
 
 
 	GoToXY(x, y + 6);	printf("# 방어력 : ");
-	for (int i = 0; i < 14 - (def * 10); i++)
+	for (int i = 0; i < 16 - (def * 10); i++)
 	{
 		if ((def * 10) > i)
 			printf("■");
@@ -60,7 +60,7 @@ void Equip::PrintInfo(SHORT x, SHORT y)
 	printf("#");
 
 	GoToXY(x, y + 7);	printf("# 스피드 : ");
-	for (int i = 0; i < 14 - speed * 10; i++)
+	for (int i = 0; i < 16 - speed * 10; i++)
 	{
 		if (speed * 10 > i)
 			printf("■");

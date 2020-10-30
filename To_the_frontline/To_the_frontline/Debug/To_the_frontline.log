@@ -1,27 +1,13 @@
-﻿  Info.cpp
-C:\Users\speed\Documents\GitHub\C++_To_the_frontline\To_the_frontline\To_the_frontline\Info.cpp(38,18): warning C4477: 'fscanf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'const _Elem *'입니다.
-          with
-          [
-              _Elem=char
-          ]
-C:\Users\speed\Documents\GitHub\C++_To_the_frontline\To_the_frontline\To_the_frontline\Info.cpp(88,17): warning C4477: 'fscanf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 6의 형식이 'const _Elem *'입니다.
-          with
-          [
-              _Elem=char
-          ]
-C:\Users\speed\Documents\GitHub\C++_To_the_frontline\To_the_frontline\To_the_frontline\Info.cpp(88,17): warning C4477: 'fscanf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 7의 형식이 'const _Elem *'입니다.
-          with
-          [
-              _Elem=char
-          ]
-C:\Users\speed\Documents\GitHub\C++_To_the_frontline\To_the_frontline\To_the_frontline\Info.cpp(132,18): warning C4477: 'fscanf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'const _Elem *'입니다.
-          with
-          [
-              _Elem=char
-          ]
-  Start.cpp
-C:\Users\speed\Documents\GitHub\C++_To_the_frontline\To_the_frontline\To_the_frontline\Start.cpp(36,29): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\speed\Documents\GitHub\C++_To_the_frontline\To_the_frontline\To_the_frontline\Start.cpp(41,31): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+﻿  Start.cpp
+C:\Users\불곰\Documents\github\Cpp_To_the_frontline\To_the_frontline\To_the_frontline\Start.cpp(36,29): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\불곰\Documents\github\Cpp_To_the_frontline\To_the_frontline\To_the_frontline\Start.cpp(41,31): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  Title.cpp
+  Upgrade.cpp
   코드를 생성하고 있습니다...
-  LINK : C:\Users\speed\Documents\GitHub\C++_To_the_frontline\To_the_frontline\Debug\To_the_frontline.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
-  To_the_frontline.vcxproj -> C:\Users\speed\Documents\GitHub\C++_To_the_frontline\To_the_frontline\Debug\To_the_frontline.exe
+  Army.cpp
+  Player.cpp
+C:\Users\불곰\Documents\github\Cpp_To_the_frontline\To_the_frontline\To_the_frontline\Player.cpp(36,36): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\불곰\Documents\github\Cpp_To_the_frontline\To_the_frontline\To_the_frontline\Player.cpp(54,37): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\불곰\Documents\github\Cpp_To_the_frontline\To_the_frontline\To_the_frontline\Player.cpp(65,36): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+  To_the_frontline.vcxproj -> C:\Users\불곰\Documents\github\Cpp_To_the_frontline\To_the_frontline\Debug\To_the_frontline.exe

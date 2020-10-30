@@ -10,8 +10,11 @@
 
 GameManager::GameManager()
 {
-	ArmyList = new vector<Army*>;
-	LoadArmyList(ArmyList, "./data/Start_Army.txt");
+	ArmyList = new vector<MyArmy*>;
+	LoadArmyList(ArmyList, "./data/Start_MyArmy.txt");
+	
+	EnermyList = new vector<EnermyArmy*>;
+	LoadEnermyList(EnermyList, "./data/Start_EnermyArmy.txt");
 
 	EquipList = new vector<Equip*>;
 	LoadEquipList(EquipList, "./data/Start_Equip.txt");
@@ -79,14 +82,24 @@ GameManager::~GameManager()
 	}
 }
 
-vector<Army*>* GameManager::GetArmyList()
+vector<MyArmy*>* GameManager::GetArmyList()
 {
 	return ArmyList;
 }
 
-void GameManager::SetArmyList(vector<Army*>* list)
+void GameManager::SetArmyList(vector<MyArmy*>* list)
 {
 	ArmyList = list;
+}
+
+vector<EnermyArmy*>* GameManager::GetEnermyList()
+{
+	return EnermyList;
+}
+
+void GameManager::SetEnermyList(vector<EnermyArmy*>* list)
+{
+	EnermyList = list;
 }
 
 vector<Equip*>* GameManager::GetEquipList()

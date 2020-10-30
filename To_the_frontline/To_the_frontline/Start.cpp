@@ -13,7 +13,7 @@ void Start::Init()
     OnOff = true;
     SetCursorVisible(false);
 
-    LoadArmyList(&MyArmyList, "./data/Start_Army.txt");
+    LoadArmyList(&MyArmyList, "./data/Start_MyArmy.txt");
     LoadEquipList(&MyEquipList, "./data/Start_Equip.txt");
 
     Draw();
@@ -30,7 +30,7 @@ void Start::Update()
         switch (key)
         {
         case ENTER:
-            vector<Army*>* Alist = new vector<Army*>;
+            vector<MyArmy*>* Alist = new vector<MyArmy*>;
             vector<Equip*>* Elist = new vector<Equip*>;
             
             for(int i = 0; i< MyArmyList.size(); i++)

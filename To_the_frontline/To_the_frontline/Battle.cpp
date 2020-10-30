@@ -20,7 +20,6 @@ void Battle::Init()
 
     CurrentButton = ButtonList.begin();
 
-   
     OnOff = true;
     Draw();
 }
@@ -56,7 +55,7 @@ void Battle::Update()
             case ENTER:
                 if ((*CurrentButton)->num == 0)    // 백병전
                 {
-
+                    DrawAttack();
                 }
                 if ((*CurrentButton)->num == 1)    // 견제
                 {
@@ -87,13 +86,11 @@ void Battle::Draw()
     system("cls");
 
     DrawSceneName();
-    //DrawStageInfo();			//정보값들은 오브젝트를 생성해주고 설정
-    //DrawPlayerInfo();
-
+  
     //아군상황 그리기
-    DrawEnermyList();
-    //적 상황 그리기
     DrawArmyList();
+    //적 상황 그리기
+    DrawEnermyList();
   
     PrintButtonList(ButtonList, CurrentButton);
 }
@@ -111,11 +108,40 @@ void Battle::DrawEnermyList()
         printf("-");
 
     GoToXY(1, 2);
-    SetTextColor(12);
-    printf("[적군]");
+    SetTextColor(10);
+    printf("[적군]                                                 [성 Lv. %d]", GameManager::getInstance()->GetPlayerInfo()->catle +1);
 
-    //for (int i = 0; i < (int)GameManager::getInstance()->GetPoketmonList()->size(); i++)
-    //{
-        //(*GameManager::getInstance()->GetPoketmonList())[i]->PrintInfo(2 + i * 30, 35);
-    //}
+    for (int i = 0; i < (int)GameManager::getInstance()->GetArmyList()->size(); i++)
+    {
+        (*GameManager::getInstance()->GetArmyList())[i]->PrintInfo(2 + i * 30, 4);
+    }
+}
+
+void Battle::DrawAttack()
+{
+    system("cls");
+
+    //아군상황 그리기
+    DrawArmyList();
+    //적 상황 그리기
+    DrawEnermyList();
+
+    GoToXY(20, 16); printf("아군 궁병의 공격 -데미지-");
+    _sleep(1000);
+    GoToXY(20, 18); printf("아군 기병의 공격 -데미지-");
+    _sleep(1000);
+    GoToXY(20, 20); printf("아군 보병의 공격 -데미지-");
+    _sleep(1000);
+    //병사끼리 스피드 크기로 공격 순서 정함
+
+
+    GoToXY(20, 22); printf("적군 궁병의 공격 -데미지-");
+    _sleep(1000);
+    GoToXY(20, 24); printf("적군 궁병의 공격 -데미지-");
+    _sleep(1000);
+    GoToXY(20, 26); printf("적군 궁병의 공격 -데미지-");
+
+
+
+    //끝나고 Enter or 아무키 메뉴 버튼 출력
 }

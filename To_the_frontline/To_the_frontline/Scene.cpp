@@ -79,6 +79,7 @@ void Scene::PrintButtonList(list<Button*> ButtonList, list<Button*>::iterator Cu
 		advance(iter, i);
 
 		GoToXY((*iter)->pos_x, (*iter)->pos_y);
+			
 		printf("%s", (*iter)->text.c_str());
 	}
 
