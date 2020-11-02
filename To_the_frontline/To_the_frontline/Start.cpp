@@ -13,6 +13,7 @@ void Start::Init()
     OnOff = true;
     SetCursorVisible(false);
 
+    LoadEnermyList(&EnermyList, "./data/Start_EnermyArmy.txt");
     LoadArmyList(&MyArmyList, "./data/Start_MyArmy.txt");
     LoadEquipList(&MyEquipList, "./data/Start_Equip.txt");
 
