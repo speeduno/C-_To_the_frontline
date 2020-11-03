@@ -3,7 +3,8 @@
 #include "player.h"
 #include "MyArmy.h"
 #include "EnermyArmy.h"
-#include "SpecialArmy.h"
+#include "MySpecial.h"
+#include "EnermySpecial.h"
 #include "Equip.h"
 
 enum SCENE_TYPE
@@ -22,7 +23,8 @@ class Scene;
 class Plyaer;
 class MyArmy;
 class EnermyArmy;
-class SpecialArmy;
+class MySpecial;
+class EnermySpecial;
 class Equip;
 
 class GameManager
@@ -35,7 +37,8 @@ private:
 
 	vector<MyArmy*>* ArmyList;			// 소유 군사 리스트
 	vector<EnermyArmy*>* EnermyList;	// 소유 군사 리스트
-	SpecialArmy* MySpecial;				// 스페셜리스트
+	MySpecial* MySpecialA;				// 스페셜리스트
+	EnermySpecial* EnermySpecialA;		// 스페셜리스트
 	vector<Equip*>* EquipList;			// 장비리스트
 	Player* MyPlayer;					// 플레이어 정보
 	GameManager();
@@ -57,8 +60,11 @@ public:
 	vector<EnermyArmy*>* GetEnermyList();
 	void SetEnermyList(vector<EnermyArmy*>* list);
 
-	SpecialArmy* GetSpecialList();
-	void SetSpecailList(SpecialArmy*  special);
+	MySpecial* GetMySpecialList();
+	void SetMySpecailList(MySpecial*  special);
+
+	EnermySpecial* GetEnermySpecialList();
+	void SetEnermySpecailList(EnermySpecial* special);
 
 	vector<Equip*>* GetEquipList();
 	void SetEquipList(vector<Equip*>* list);

@@ -227,35 +227,35 @@ void Recruit::SpecialGacha()
 
         if (idx == 3)
         {
-            if (GameManager::getInstance()->GetSpecialList()->general >= 9)
+            if (GameManager::getInstance()->GetMySpecialList()->general >= 9)
             {
                 GoToXY(40, 8);	printf("!   *장  군은 9명 이상 채용할 수 없습니다.*   !");
             }
        
             else
-            GameManager::getInstance()->GetSpecialList()->general += max;
+            GameManager::getInstance()->GetMySpecialList()->general += max;
         }
             
         if (idx == 4)
         {
-            if (GameManager::getInstance()->GetSpecialList()->recon >= 9)
+            if (GameManager::getInstance()->GetMySpecialList()->recon >= 9)
             {
                 GoToXY(40, 8);	printf("!   *정찰병은 9명 이상 채용할 수 없습니다.*   !");
             }
 
             else
-                GameManager::getInstance()->GetSpecialList()->recon += max;
+                GameManager::getInstance()->GetMySpecialList()->recon += max;
         }
          
         if (idx == 5)
         {
-            if (GameManager::getInstance()->GetSpecialList()->sniper >= 9)
+            if (GameManager::getInstance()->GetMySpecialList()->sniper >= 9)
             {
                 GoToXY(40, 8);	printf("!   *저격수는 9명 이상 채용할 수 없습니다.*   !");
             }
 
             else
-                GameManager::getInstance()->GetSpecialList()->sniper += max;
+                GameManager::getInstance()->GetMySpecialList()->sniper += max;
         }
     }
 

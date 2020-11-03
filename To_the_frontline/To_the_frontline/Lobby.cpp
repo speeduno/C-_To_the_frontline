@@ -105,8 +105,7 @@ void Lobby::Draw()
 {
     system("cls");
 
-    DrawSceneName();
-    //DrawStageInfo();			//정보값들은 오브젝트를 생성해주고 설정
+    DrawSceneName();   
     DrawPlayerInfo();
     DrawArmyList();
 

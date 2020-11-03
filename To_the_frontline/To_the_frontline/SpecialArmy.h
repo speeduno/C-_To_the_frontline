@@ -13,6 +13,7 @@ public:
 	~SpecialArmy();
 	SpecialArmy(const SpecialArmy& army);		// 깊은 복사 생성자
 
-	void Printspecal(SHORT x, SHORT y);
+public:
+	virtual void PrintSpecial(SHORT x, SHORT y) = 0 {}
 };
 

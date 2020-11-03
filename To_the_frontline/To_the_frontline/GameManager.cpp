@@ -19,7 +19,9 @@ GameManager::GameManager()
 	EquipList = new vector<Equip*>;
 	LoadEquipList(EquipList, "./data/Start_Equip.txt");
 
-	MySpecial = new SpecialArmy();
+	MySpecialA = new MySpecial();
+
+	EnermySpecialA = new EnermySpecial();
 
 	MyPlayer = new Player();
 	LoadPlayerInfo(MyPlayer, "./data/Player_Info.txt");
@@ -112,14 +114,24 @@ void GameManager::SetEquipList(vector<Equip*>* list)
 	EquipList = list;
 }
 
-SpecialArmy* GameManager::GetSpecialList()
+MySpecial* GameManager::GetMySpecialList()
 {
-	return MySpecial;
+	return MySpecialA;
 }
 
-void GameManager::SetSpecailList(SpecialArmy* special)
+void GameManager::SetMySpecailList(MySpecial* special)
 {
-	MySpecial = special;
+	MySpecialA = special;
+}
+
+EnermySpecial* GameManager::GetEnermySpecialList()
+{
+	return EnermySpecialA;
+}
+
+void GameManager::SetEnermySpecailList(EnermySpecial* special)
+{
+	EnermySpecialA = special;
 }
 
 Player* GameManager::GetPlayerInfo()

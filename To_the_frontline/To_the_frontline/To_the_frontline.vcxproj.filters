@@ -87,6 +87,12 @@
     <ClCompile Include="EnermyArmy.cpp">
       <Filter>소스 파일\Object</Filter>
     </ClCompile>
+    <ClCompile Include="EnermySpecial.cpp">
+      <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="MySpecial.cpp">
+      <Filter>소스 파일\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameManager.h">
@@ -138,6 +144,12 @@
       <Filter>헤더 파일\Object</Filter>
     </ClInclude>
     <ClInclude Include="MyArmy.h">
+      <Filter>헤더 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="EnermySpecial.h">
+      <Filter>헤더 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="MySpecial.h">
       <Filter>헤더 파일\Object</Filter>
     </ClInclude>
   </ItemGroup>

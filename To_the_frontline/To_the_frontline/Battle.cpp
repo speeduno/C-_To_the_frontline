@@ -115,6 +115,8 @@ void Battle::DrawEnermyList()
     {
         (*GameManager::getInstance()->GetArmyList())[i]->PrintInfo(2 + i * 30, 4);
     }
+
+    GameManager::getInstance()->GetEnermySpecialList()->PrintSpecial(92, 4);
 }
 
 void Battle::DrawAttack()
@@ -125,6 +127,7 @@ void Battle::DrawAttack()
     DrawArmyList();
     //적 상황 그리기
     DrawEnermyList();
+
 
     GoToXY(20, 16); printf("아군 궁병의 공격 -데미지-");
     _sleep(1000);
@@ -140,8 +143,9 @@ void Battle::DrawAttack()
     GoToXY(20, 24); printf("적군 궁병의 공격 -데미지-");
     _sleep(1000);
     GoToXY(20, 26); printf("적군 궁병의 공격 -데미지-");
+    _sleep(2000);
 
-
+    Init();
 
     //끝나고 Enter or 아무키 메뉴 버튼 출력
 }

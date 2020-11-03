@@ -97,7 +97,7 @@ void Recon::EnermySearch()
     uniform_int_distribution<int> dis1(0, 1);
     sucess = dis1(gen);
  
-    if (GameManager::getInstance()->GetSpecialList()->recon <= 0)
+    if (GameManager::getInstance()->GetMySpecialList()->recon <= 0)
     {
         GoToXY(40, 4);	printf("                 Á¤Âûº´ÀÌ ¾ø½À´Ï´Ù.                 ");
         return;
@@ -113,7 +113,7 @@ void Recon::EnermySearch()
     {
         GoToXY(40, 6);	printf("!                  **½ÇÆÐ**                    !");
         GoToXY(40, 8);	printf("!              **Á¤Âûº´ »ç¸Á**                 !");
-        GameManager::getInstance()->GetSpecialList()->recon--;
+        GameManager::getInstance()->GetMySpecialList()->recon--;
 
     }
     if (sucess == true)
@@ -136,7 +136,7 @@ void Recon::MunitionsCollection()
 {
     Draw();
 
-    if (GameManager::getInstance()->GetSpecialList()->recon <= 0)
+    if (GameManager::getInstance()->GetMySpecialList()->recon <= 0)
     {
         GoToXY(40, 4);	printf("                 Á¤Âûº´ÀÌ ¾ø½À´Ï´Ù.                 ");
         return;
@@ -159,7 +159,7 @@ void Recon::MunitionsCollection()
         GoToXY(40, 6);	printf("!                  **½ÇÆÐ**                    !");
         GoToXY(40, 8);	printf("!              **Á¤Âûº´ »ç¸Á**                 !");
 
-        GameManager::getInstance()->GetSpecialList()->recon--;
+        GameManager::getInstance()->GetMySpecialList()->recon--;
     }
     if (sucess == true)
     {

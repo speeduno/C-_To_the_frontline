@@ -35,7 +35,6 @@ public:
 	virtual void Draw() = 0 { }			// 유저의 선택으로 인한 정보 변화를 참조하여 씬의 전체 텍스트들을 다시 그림
 	virtual void Destroy() = 0 { }		// 씬이 종료될 때 호출 (다른 씬으로 이동)
 
-
 	void DrawSceneName();						// 현재 씬의 이름을 출력하는 함수
 	void DrawPlayerInfo();						// 플레이어 정보를 출력하는 함수
 	void DrawEquipList();

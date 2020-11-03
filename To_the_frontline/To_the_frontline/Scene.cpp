@@ -66,7 +66,7 @@ void Scene::DrawArmyList()
 		(*GameManager::getInstance()->GetArmyList())[i]->PrintInfo(2 + i * 30, 35);
 	}	
 
-	GameManager::getInstance()->GetSpecialList()->Printspecal(92, 35);
+	GameManager::getInstance()->GetMySpecialList()->PrintSpecial(92, 35);
 }
 
 void Scene::PrintButtonList(list<Button*> ButtonList, list<Button*>::iterator CurrentButton)
